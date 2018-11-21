@@ -3,9 +3,7 @@
   <homeTopNav ref="topNav" />
   <div class="main-left">
     <homeLeftNav :style="{height:winHeight}" class="left-nav" ref="leftNav"  />
-
-
-    <iframe :style="{width:winWidth,height:winHeight}" class="content" src="/404"></iframe>
+    <iframe :style="{width:winWidth,height:winHeight}" class="content" :src="selectSrc"></iframe>
   </div>
 </div>
 </template>
@@ -23,7 +21,8 @@ export default {
     return {
       isCollapse: false,
       winHeight: "200px",
-          winWidth: "200px",
+      winWidth: "200px",
+      selectSrc:"/index"
     };
   },
   methods: {

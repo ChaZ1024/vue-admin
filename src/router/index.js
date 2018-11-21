@@ -4,40 +4,14 @@ import Login from '@/pages/Login'
 
 import Home from '@/pages/Home'
 import Notfound from '@/pages/Notfound'
-
+import HomeIndex from '@/pages/HomeIndex'
 import A from '@/pages/Notfound'
+
+import Routes from "@/components/Routes"
 
 Vue.use(Router)
 
 export default new Router({
-    mode: 'history',
-  routes: [
-    {
-      path: '/login',
-      name: 'login',
-      component: Login
-    },
-    {
-      path: '/',
-      name: 'home',
-      component: Home,
-      children: [
-        {
-          path: "index",
-          component: Notfound,
-          name:"Index",
-          meta: {
-          requiresAuth: true
-        }},
-       ],
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
-      path: '/404',
-      name: '404',
-      component: Notfound
-    }
-  ]
+  mode: 'history',
+  routes:Routes
 })
